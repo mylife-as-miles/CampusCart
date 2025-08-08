@@ -47,7 +47,7 @@ npm run seed
 - ✅ App name changed from "front_end" to "CampusCart"
 - ✅ Branding updated across Android & iOS
 - ✅ Food categories instead of fashion categories
-- ✅ Student-friendly pricing ($3.99 - $16.99)
+- ✅ Student-friendly pricing (₦600 - ₦3,500)
 - ✅ Food-focused descriptions and text
 - ✅ Backend seeder with 10 sample food items
 - ✅ Tab names updated (Menu, Favorites, Cart, Search, Profile)

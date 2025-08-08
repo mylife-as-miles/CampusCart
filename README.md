@@ -1,8 +1,8 @@
 # CampusCart 🍕📱
 
-**A Food Delivery App for Campus Students**
+**A Food Delivery App for University of Nigeria, Nsukka (UNN) Students**
 
-CampusCart is a React Native e-commerce application specifically designed for food delivery on campus. Students can browse delicious meals from campus restaurants and local eateries, place orders, and get food delivered directly to their dorm rooms or study locations.
+CampusCart is a React Native e-commerce application specifically designed for food delivery at the University of Nigeria, Nsukka. Students can browse delicious meals from campus restaurants and local eateries, place orders, and get food delivered directly to their hostels or study locations within the university.
 
 ## 🚀 Features
 
@@ -115,18 +115,18 @@ CampusCart is a React Native e-commerce application specifically designed for fo
 
 ## 🍔 Sample Menu Items
 
-The app comes pre-loaded with delicious food options:
+The app comes pre-loaded with delicious food options at student-friendly prices:
 
-- **Margherita Pizza** - $12.99
-- **Classic Cheeseburger** - $9.99  
-- **Chicken Pad Thai** - $11.50
-- **Caesar Salad** - $8.99
-- **Beef Tacos** - $10.99
-- **Chocolate Brownie** - $5.99
-- **Iced Coffee** - $3.99
-- **Sushi Roll Combo** - $16.99
-- **Veggie Burger** - $10.99
-- **Green Smoothie** - $6.99
+- **Margherita Pizza** - ₦2,500
+- **Classic Cheeseburger** - ₦1,800  
+- **Chicken Pad Thai** - ₦2,000
+- **Caesar Salad** - ₦1,500
+- **Beef Tacos** - ₦1,700
+- **Chocolate Brownie** - ₦800
+- **Iced Coffee** - ₦600
+- **Sushi Roll Combo** - ₦3,500
+- **Veggie Burger** - ₦1,600
+- **Green Smoothie** - ₦1,200
 
 ## 🔧 Development
 
