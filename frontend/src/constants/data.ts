@@ -90,11 +90,11 @@ const randomTitle = (): string =>
   titles[Math.floor(Math.random() * titles.length)];
 
 const randomPrice = (): number =>
-  parseFloat((Math.floor(Math.random() * 5000) + 500).toFixed(2));
+  parseFloat((Math.floor(Math.random() * 30) + 5).toFixed(2));
 
 const randomPriceBeforeDeal = (): number =>
   parseFloat(
-    (randomPrice() + (Math.floor(Math.random() * 1000) + 100)).toFixed(2),
+    (randomPrice() + (Math.floor(Math.random() * 10) + 2)).toFixed(2),
   );
 
 const randomPriceOff = (price: number, priceBeforeDeal: number): string =>
@@ -110,9 +110,9 @@ const ProductData: ProductTypes[] = Array.from(
     const price = randomPrice();
     const priceBeforeDeal = randomPriceBeforeDeal();
     return {
-      image: randomImage(),
+      image: [randomImage(), randomImage(), randomImage()],
       title: randomTitle(),
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      description: 'Delicious and freshly prepared food item available for delivery to your campus location.',
       price: price,
       priceBeforeDeal: priceBeforeDeal,
       priceOff: randomPriceOff(price, priceBeforeDeal),
