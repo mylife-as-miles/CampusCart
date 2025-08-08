@@ -152,17 +152,17 @@ const foodstuffItems = [
   },
   {
     image: ["https://picsum.photos/400/300?random=19", "https://picsum.photos/400/300?random=20"],
-    title: "Green Smoothie",
-    description: "Healthy blend of spinach, banana, mango, and coconut water. Great post-workout drink!",
+    title: "Red Onions (1kg)",
+    description: "Fresh red onions, essential ingredient for Nigerian cooking and stews.",
     price: 1200.00,
-    priceBeforeDeal: 1500.00,
-    priceOff: 20.00,
+    priceBeforeDeal: 1400.00,
+    priceOff: 14.29,
     stars: 4.3,
     numberOfReview: 95,
-    ukSide: ["Regular", "Large"],
-    tags: ["smoothie", "healthy", "vegan", "fresh"],
+    ukSide: ["1kg", "2kg", "3kg"],
+    tags: ["vegetables", "onions", "cooking", "fresh"],
     status: {
-      icon: "🥤",
+      icon: "�",
       name: "Available"
     }
   }
@@ -177,9 +177,9 @@ const seedDatabase = async () => {
     await productsModel.deleteMany({});
     console.log('Cleared existing products');
     
-    // Insert new food items
-    const result = await productsModel.insertMany(foodItems);
-    console.log(`Successfully seeded ${result.length} food items`);
+    // Insert new foodstuff items
+    const result = await productsModel.insertMany(foodstuffItems);
+    console.log(`Successfully seeded ${result.length} foodstuff items`);
     
     mongoose.connection.close();
     console.log('Database connection closed');
