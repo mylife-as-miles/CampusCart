@@ -164,7 +164,7 @@ const TabBarData: TabBarTypes[] = [
   },
   {
     title: tabName[4],
-    image: icons.home,
+    image: icons.profile,
     link: tabName[4],
     inActiveColor: '#000000',
     activeColor: '#EB3030',
