@@ -51,12 +51,12 @@ const ProductItem: React.FC<ProductItemProps> = ({
         </Text>
         <Text className="text-black-100 font-bold text-2xl text-start">
           {' '}
-          ${price}{' '}
+          ₦{price.toLocaleString()}{' '}
         </Text>
         <View className="flex flex-row items-center gap-x-3">
           <Text className="text-black-100/50 font-thin text-xl  line-through text-start">
             {' '}
-            {priceBeforeDeal}{' '}
+            ₦{priceBeforeDeal.toLocaleString()}{' '}
           </Text>
           <Text className="text-action font-thin text-xl "> {priceOff} </Text>
         </View>
