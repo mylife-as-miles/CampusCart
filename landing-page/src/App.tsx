@@ -12,15 +12,18 @@ import {
   Shield,
   Smartphone,
   Heart,
+  Menu,
+  X,
   Apple,
   Play,
   Clock
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { } from 'react'
+import { useState } from 'react'
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const tiltX = useMotionValue(0)
   const tiltY = useMotionValue(0)
 
@@ -52,6 +55,50 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
+      {/* Top Navigation */}
+      <header className="fixed top-0 inset-x-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <a href="#home" className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-gradient-to-r from-campusRed to-pink-500 rounded-lg flex items-center justify-center">
+              <ShoppingCart className="w-5 h-5 text-white" />
+            </div>
+            <span className="font-bold">CampusCart</span>
+          </a>
+          <nav className="hidden md:flex items-center gap-8 text-sm text-gray-700">
+            <a href="#home" className="hover:text-campusRed">Home</a>
+            <a href="#features" className="hover:text-campusRed">Features</a>
+            <a href="#how-it-works" className="hover:text-campusRed">How it works</a>
+            <a href="#testimonials" className="hover:text-campusRed">Testimonials</a>
+            <a href="#contact" className="hover:text-campusRed">Contact</a>
+          </nav>
+          <div className="hidden md:block">
+            <Button className="bg-campusRed hover:bg-campusRed/90" size="sm">
+              <Download className="w-4 h-4 mr-2" /> Download
+            </Button>
+          </div>
+          <button
+            aria-label="Toggle menu"
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-gray-200"
+            onClick={() => setIsMenuOpen(v => !v)}
+          >
+            {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
+        {isMenuOpen && (
+          <div className="md:hidden border-t border-gray-100 bg-white/95 backdrop-blur">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 grid gap-3 text-gray-700">
+              <a href="#home" className="py-1" onClick={() => setIsMenuOpen(false)}>Home</a>
+              <a href="#features" className="py-1" onClick={() => setIsMenuOpen(false)}>Features</a>
+              <a href="#how-it-works" className="py-1" onClick={() => setIsMenuOpen(false)}>How it works</a>
+              <a href="#testimonials" className="py-1" onClick={() => setIsMenuOpen(false)}>Testimonials</a>
+              <a href="#contact" className="py-1" onClick={() => setIsMenuOpen(false)}>Contact</a>
+              <Button className="mt-2 bg-campusRed hover:bg-campusRed/90" onClick={() => setIsMenuOpen(false)}>
+                <Download className="w-4 h-4 mr-2" /> Download
+              </Button>
+            </div>
+          </div>
+        )}
+      </header>
       {/* Hero Section */}
       <section id="home" className="relative pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-red-50" />
