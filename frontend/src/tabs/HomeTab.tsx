@@ -121,7 +121,7 @@ const HomeTab = (props: Props) => {
       <View className="bg-[#4392F9] rounded-xl justify-between flex flex-row mx-5 pl-5 py-5">
         <View>
           <Text className="text-white  text-2xl font-semibold">
-            Daily of the Day
+            Deal of the Day
           </Text>
           <View className="flex flex-row mt-3 items-center gap-x-1">
             <Image
@@ -131,7 +131,7 @@ const HomeTab = (props: Props) => {
             />
             <Text className="text-white text-base font-medium">
               {' '}
-              22h 55m 20s remaining{' '}
+              Limited time offers ending soon!{' '}
             </Text>
           </View>
         </View>
