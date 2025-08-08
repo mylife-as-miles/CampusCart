@@ -153,11 +153,8 @@ function App() {
                 variants={fadeInUp}
                 transition={{ duration: 0.6 }}
               >
-                Your Favorite{' '}
-                <span className="text-campusRed">Campus Food</span>
-                <br />
-                Delivered in{' '}
-                <span className="text-campusBlue">Minutes</span>
+                Essential <span className="text-campusRed">Foodstuffs</span>
+                <br />for <span className="text-campusBlue">UNN Students</span>
               </motion.h1>
               
               <motion.p 
@@ -165,8 +162,7 @@ function App() {
                 variants={fadeInUp}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Skip the long cafeteria lines! Order from your favorite campus restaurants 
-                and get delicious food delivered right to your dorm, library, or anywhere on campus.
+                Get staple foodstuffs like rice, beans, garri, oil, spices and more delivered fast to your hostel at the University of Nigeria, Nsukka.
               </motion.p>
 
               <motion.div 
@@ -189,9 +185,9 @@ function App() {
                 variants={stagger}
               >
                 {[
-                  { number: '50K+', label: 'Happy Students' },
-                  { number: '200+', label: 'Campus Restaurants' },
-                  { number: '15min', label: 'Avg Delivery' }
+                  { number: '5K+', label: 'Happy Students' },
+                  { number: '50+', label: 'Food Categories' },
+                  { number: '30min', label: 'Avg Delivery' }
                 ].map((stat, index) => (
                   <motion.div key={index} variants={fadeInUp} transition={{ duration: 0.6, delay: index * 0.1 }}>
                     <div className="text-2xl md:text-3xl font-bold text-gray-900">{stat.number}</div>
@@ -203,64 +199,115 @@ function App() {
 
             <motion.div 
               className="relative"
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="relative mx-auto w-80 h-96 bg-gray-900 rounded-3xl p-2 shadow-2xl">
-                <div className="w-full h-full bg-white rounded-2xl overflow-hidden">
-                  <div className="bg-gradient-to-r from-campusRed to-campusBlue p-4 text-white">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        <MapPin className="w-4 h-4" />
-                        <span className="text-sm">University Campus</span>
-                      </div>
-                      <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                        <Users className="w-4 h-4" />
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="p-4 space-y-4">
-                    <div className="bg-gray-100 rounded-lg p-3">
-                      <input 
-                        type="text" 
-                        placeholder="Search for food..." 
-                        className="w-full bg-transparent text-sm outline-none"
-                        readOnly
-                      />
-                    </div>
-                    
-                    <div className="flex space-x-2 overflow-x-auto">
-                      {['🍕 Pizza', '🍔 Burgers', '🥗 Salads', '☕ Coffee'].map((category, index) => (
-                        <div 
-                          key={index}
-                          className={`flex-shrink-0 px-3 py-2 rounded-full text-xs ${
-                            index === 0 ? 'bg-campusRed text-white' : 'bg-gray-100 text-gray-600'
-                          }`}
-                        >
-                          {category}
+              {/* iPhone frame */}
+              <motion.div 
+                className="relative mx-auto w-[320px] h-[640px]"
+                whileHover={{ rotateX: 4, rotateY: -4 }}
+                transition={{ type: 'spring', stiffness: 120, damping: 12 }}
+              >
+                <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-zinc-200 to-zinc-50 p-[6px] shadow-[0_20px_60px_rgba(0,0,0,0.25)] border border-white/60">
+                  <div className="relative w-full h-full rounded-[2.6rem] overflow-hidden bg-black">
+                    {/* Dynamic Island / notch */}
+                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-32 h-9 bg-black rounded-full ring-1 ring-white/10 shadow-[inset_0_-1px_2px_rgba(255,255,255,0.25)]" />
+                    {/* Side buttons */}
+                    <div className="absolute left-[-2px] top-24 w-1 h-14 bg-zinc-300 rounded-r-full" />
+                    <div className="absolute left-[-2px] top-44 w-1 h-10 bg-zinc-300 rounded-r-full" />
+                    <div className="absolute right-[-2px] top-36 w-1 h-20 bg-zinc-300 rounded-l-full" />
+
+                    {/* Screen content */}
+                    <div className="absolute inset-0 bg-[radial-gradient(1200px_500px_at_50%_-20%,rgba(248,55,88,0.25),transparent_60%),radial-gradient(800px_400px_at_50%_120%,rgba(67,146,249,0.25),transparent_60%)]" />
+                    <div className="relative z-10 p-4 space-y-4">
+                      <div className="flex items-center justify-between text-white/90 pt-6">
+                        <div className="flex items-center space-x-2">
+                          <MapPin className="w-4 h-4" />
+                          <span className="text-xs">UNN Campus</span>
                         </div>
-                      ))}
-                    </div>
-                    
-                    <div className="space-y-3">
-                      {[
-                        { emoji: '🍕', name: 'Margherita Pizza', price: '$12.99' },
-                        { emoji: '🍔', name: 'Classic Burger', price: '$8.99' }
-                      ].map((item, index) => (
-                        <div key={index} className="flex items-center space-x-3 p-2 bg-gray-50 rounded-lg">
-                          <div className="text-2xl">{item.emoji}</div>
-                          <div className="flex-1">
-                            <div className="font-medium text-sm">{item.name}</div>
-                            <div className="text-campusRed font-bold text-sm">{item.price}</div>
+                        <div className="text-xs">12:45</div>
+                      </div>
+
+                      {/* Search */}
+                      <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-2">
+                        <input
+                          readOnly
+                          placeholder="Search foodstuffs..."
+                          className="w-full bg-transparent text-white/90 placeholder-white/70 text-xs outline-none"
+                        />
+                      </div>
+
+                      {/* Category pills */}
+                      <div className="flex space-x-2 overflow-x-auto no-scrollbar">
+                        {['Rice', 'Beans', 'Garri', 'Palm Oil', 'Spices', 'Veggies'].map((c, i) => (
+                          <div
+                            key={c}
+                            className={`flex-shrink-0 px-3 py-1.5 rounded-full text-[10px] ${i === 0 ? 'bg-campusRed text-white' : 'bg-white/10 text-white/80 border border-white/10'}`}
+                          >
+                            {c}
                           </div>
+                        ))}
+                      </div>
+
+                      {/* Auto-scrolling product list */}
+                      <div className="relative h-72 overflow-hidden rounded-xl">
+                        <motion.div
+                          className="absolute inset-0"
+                          animate={{ y: [0, -220, 0] }}
+                          transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+                        >
+                          <div className="space-y-3">
+                            {[
+                              { emoji: '�', name: 'Local Rice (1kg)', price: '₦1,600' },
+                              { emoji: '🫘', name: 'Brown Beans (1kg)', price: '₦2,800' },
+                              { emoji: '🥣', name: 'Garri (2kg)', price: '₦2,200' },
+                              { emoji: '🫙', name: 'Palm Oil (1L)', price: '₦3,400' },
+                              { emoji: '🧂', name: 'Spices Combo', price: '₦1,200' },
+                              { emoji: '🧅', name: 'Veggies Mix', price: '₦1,000' },
+                            ].concat([
+                              { emoji: '�', name: 'Local Rice (1kg)', price: '₦1,600' },
+                              { emoji: '🫘', name: 'Brown Beans (1kg)', price: '₦2,800' },
+                              { emoji: '🥣', name: 'Garri (2kg)', price: '₦2,200' },
+                            ]).map((item, idx) => (
+                              <motion.div
+                                key={idx}
+                                className="flex items-center space-x-3 p-3 bg-white/10 backdrop-blur-md border border-white/10 rounded-lg text-white"
+                                whileHover={{ scale: 1.02 }}
+                              >
+                                <div className="text-2xl">{item.emoji}</div>
+                                <div className="flex-1">
+                                  <div className="text-sm font-medium">{item.name}</div>
+                                  <div className="text-xs text-white/80">Fresh • Quality assured</div>
+                                </div>
+                                <div className="text-xs font-semibold">{item.price}</div>
+                                <Button size="sm" className="ml-2 h-7 px-3 bg-campusRed hover:bg-campusRed/90">
+                                  Add
+                                </Button>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </motion.div>
+                        {/* gradient masks */}
+                        <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-black to-transparent" />
+                        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black to-transparent" />
+                      </div>
+
+                      {/* Bottom action */}
+                      <div className="flex items-center justify-between pt-1">
+                        <div className="text-white/80 text-xs flex items-center space-x-1">
+                          <Clock className="w-4 h-4" />
+                          <span>Avg 30 min</span>
                         </div>
-                      ))}
+                        <Button className="h-9 bg-white text-black hover:bg-white/90">
+                          <ShoppingCart className="w-4 h-4 mr-2" />
+                          Checkout
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Floating cards */}
               <motion.div 
@@ -281,7 +328,7 @@ function App() {
               >
                 <div className="flex items-center space-x-2">
                   <Clock className="w-5 h-5 text-campusBlue" />
-                  <span className="text-sm font-medium">15 min delivery</span>
+                  <span className="text-sm font-medium">30 min delivery</span>
                 </div>
               </motion.div>
             </motion.div>
