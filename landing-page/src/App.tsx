@@ -236,128 +236,128 @@ function App() {
 
               <motion.div 
                 className="mt-12 grid grid-cols-3 gap-8 text-center lg:text-left"
-                <motion.div 
-                  className="relative"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                >
+                variants={stagger}
+              >
+                {[
+                  { number: '5K+', label: 'Happy Students' },
+                  { number: '50+', label: 'Food Categories' },
+                  { number: '30min', label: 'Avg Delivery' }
                 ].map((stat, index) => (
-                  <motion.div 
-                    ref={phoneRef}
-                    className="relative mx-auto w-[320px] h-[640px] will-change-transform"
-                    style={{ rotateX: rX, rotateY: rY, transformPerspective: 1000 }}
-                    onMouseMove={handleTilt}
-                    onMouseLeave={resetTilt}
-                  >
-                    <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-zinc-200 to-zinc-50 p-[6px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-white/60">
-                      <div className="relative w-full h-full rounded-[2.6rem] overflow-hidden bg-white">
-                        {/* Dynamic Island / notch */}
-                        <div className="absolute top-3 left-1/2 -translate-x-1/2 w-32 h-9 bg-black rounded-full ring-1 ring-black/70 shadow-[inset_0_-1px_2px_rgba(255,255,255,0.35)]" />
-                        {/* Side buttons */}
-                        <div className="absolute left-[-2px] top-24 w-1 h-14 bg-zinc-300 rounded-r-full" />
-                        <div className="absolute left-[-2px] top-44 w-1 h-10 bg-zinc-300 rounded-r-full" />
-                        <div className="absolute right-[-2px] top-36 w-1 h-20 bg-zinc-300 rounded-l-full" />
+                  <motion.div key={index} variants={fadeInUp} transition={{ duration: 0.6, delay: index * 0.1 }}>
+                    <div className="text-2xl md:text-3xl font-bold text-gray-900">{stat.number}</div>
+                    <div className="text-sm text-gray-600">{stat.label}</div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
 
-                        {/* Subtle background accents */}
-                        <div className="absolute inset-0 bg-[radial-gradient(1200px_500px_at_50%_-20%,rgba(67,146,249,0.15),transparent_60%),radial-gradient(800px_400px_at_50%_120%,rgba(248,55,88,0.12),transparent_60%)]" />
+            {/* Phone mockup with tilt */}
+            <motion.div 
+              className="relative"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <motion.div 
+                ref={phoneRef}
+                className="relative mx-auto w-[320px] h-[640px] will-change-transform"
+                style={{ rotateX: rX, rotateY: rY, transformPerspective: 1000 }}
+                onMouseMove={handleTilt}
+                onMouseLeave={resetTilt}
+              >
+                <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-zinc-200 to-zinc-50 p-[6px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-white/60">
+                  <div className="relative w-full h-full rounded-[2.6rem] overflow-hidden bg-white">
+                    {/* Dynamic Island / notch */}
+                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-32 h-9 bg-black rounded-full ring-1 ring-black/70 shadow-[inset_0_-1px_2px_rgba(255,255,255,0.35)]" />
+                    {/* Side buttons */}
+                    <div className="absolute left-[-2px] top-24 w-1 h-14 bg-zinc-300 rounded-r-full" />
+                    <div className="absolute left-[-2px] top-44 w-1 h-10 bg-zinc-300 rounded-r-full" />
+                    <div className="absolute right-[-2px] top-36 w-1 h-20 bg-zinc-300 rounded-l-full" />
 
-                        <div className="relative z-10 p-4 space-y-4">
-                          <div className="flex items-center justify-between text-gray-700 pt-6">
-                            <div className="flex items-center space-x-2">
-                              <MapPin className="w-4 h-4" />
-                              <span className="text-xs">UNN Campus</span>
-                            </div>
-                            <div className="text-xs">12:45</div>
+                    {/* Subtle background accents */}
+                    <div className="absolute inset-0 bg-[radial-gradient(1200px_500px_at_50%_-20%,rgba(67,146,249,0.15),transparent_60%),radial-gradient(800px_400px_at_50%_120%,rgba(248,55,88,0.12),transparent_60%)]" />
+
+                    <div className="relative z-10 p-4 space-y-4">
+                      <div className="flex items-center justify-between text-gray-700 pt-6">
+                        <div className="flex items-center space-x-2">
+                          <MapPin className="w-4 h-4" />
+                          <span className="text-xs">UNN Campus</span>
+                        </div>
+                        <div className="text-xs">12:45</div>
+                      </div>
+
+                      {/* Search */}
+                      <div className="bg-white border border-gray-200 rounded-xl p-2 shadow-sm">
+                        <input
+                          readOnly
+                          placeholder="Search foodstuffs..."
+                          className="w-full bg-transparent text-gray-700 placeholder-gray-400 text-xs outline-none"
+                        />
+                      </div>
+
+                      {/* Category pills */}
+                      <div className="flex space-x-2 overflow-x-auto no-scrollbar">
+                        {['Rice', 'Beans', 'Garri', 'Palm Oil', 'Spices', 'Veggies'].map((c, i) => (
+                          <div
+                            key={c}
+                            className={`flex-shrink-0 px-3 py-1.5 rounded-full text-[10px] ${i === 0 ? 'bg-campusRed text-white' : 'bg-gray-100 text-gray-700 border border-gray-200'}`}
+                          >
+                            {c}
                           </div>
+                        ))}
+                      </div>
 
-                          {/* Search */}
-                          <div className="bg-white border border-gray-200 rounded-xl p-2 shadow-sm">
-                            <input
-                              readOnly
-                              placeholder="Search foodstuffs..."
-                              className="w-full bg-transparent text-gray-700 placeholder-gray-400 text-xs outline-none"
-                            />
-                          </div>
-
-                          {/* Category pills */}
-                          <div className="flex space-x-2 overflow-x-auto no-scrollbar">
-                            {['Rice', 'Beans', 'Garri', 'Palm Oil', 'Spices', 'Veggies'].map((c, i) => (
-                              <div
-                                key={c}
-                                className={`flex-shrink-0 px-3 py-1.5 rounded-full text-[10px] ${i === 0 ? 'bg-campusRed text-white' : 'bg-gray-100 text-gray-700 border border-gray-200'}`}
+                      {/* Auto-scrolling product list (supports image fallback) */}
+                      <div className="relative h-72 overflow-hidden rounded-xl">
+                        <motion.div
+                          className="absolute inset-0"
+                          animate={{ y: [0, -220, 0] }}
+                          transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+                        >
+                          <div className="space-y-3">
+                            {[
+                              { emoji: '🍚', name: 'Local Rice (1kg)', price: '₦1,600' },
+                              { emoji: '🫘', name: 'Brown Beans (1kg)', price: '₦2,800' },
+                              { emoji: '🥣', name: 'Garri (2kg)', price: '₦2,200' },
+                              { emoji: '🫙', name: 'Palm Oil (1L)', price: '₦3,400' },
+                              { emoji: '🧂', name: 'Spices Combo', price: '₦1,200' },
+                              { emoji: '🧅', name: 'Veggies Mix', price: '₦1,000' },
+                            ].concat([
+                              { emoji: '🍚', name: 'Local Rice (1kg)', price: '₦1,600' },
+                              { emoji: '🫘', name: 'Brown Beans (1kg)', price: '₦2,800' },
+                              { emoji: '🥣', name: 'Garri (2kg)', price: '₦2,200' },
+                            ]).map((item, idx) => (
+                              <motion.div
+                                key={idx}
+                                className="flex items-center space-x-3 p-3 bg-white border border-gray-200 rounded-lg text-gray-800 shadow-sm"
+                                whileHover={{ scale: 1.02 }}
                               >
-                                {c}
-                              </div>
+                                {/* Swap to <img src={item.img} /> when assets are provided */}
+                                <div className="text-2xl leading-none">{item.emoji}</div>
+                                <div className="flex-1">
+                                  <div className="text-sm font-medium">{item.name}</div>
+                                  <div className="text-xs text-gray-500">Fresh • Quality assured</div>
+                                </div>
+                                <div className="text-xs font-semibold text-gray-900">{item.price}</div>
+                                <Button size="sm" className="ml-2 h-7 px-3 bg-campusRed hover:bg-campusRed/90">
+                                  Add
+                                </Button>
+                              </motion.div>
                             ))}
                           </div>
-
-                          {/* Auto-scrolling product list (supports image fallback) */}
-                          <div className="relative h-72 overflow-hidden rounded-xl">
-                            <motion.div
-                              className="absolute inset-0"
-                              animate={{ y: [0, -220, 0] }}
-                              transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-                            >
-                              <div className="space-y-3">
-                                {[
-                                  { emoji: '🍚', name: 'Local Rice (1kg)', price: '₦1,600' },
-                                  { emoji: '🫘', name: 'Brown Beans (1kg)', price: '₦2,800' },
-                                  { emoji: '🥣', name: 'Garri (2kg)', price: '₦2,200' },
-                                  { emoji: '🫙', name: 'Palm Oil (1L)', price: '₦3,400' },
-                                  { emoji: '🧂', name: 'Spices Combo', price: '₦1,200' },
-                                  { emoji: '🧅', name: 'Veggies Mix', price: '₦1,000' },
-                                ].concat([
-                                  { emoji: '🍚', name: 'Local Rice (1kg)', price: '₦1,600' },
-                                  { emoji: '🫘', name: 'Brown Beans (1kg)', price: '₦2,800' },
-                                  { emoji: '🥣', name: 'Garri (2kg)', price: '₦2,200' },
-                                ]).map((item, idx) => (
-                                  <motion.div
-                                    key={idx}
-                                    className="flex items-center space-x-3 p-3 bg-white border border-gray-200 rounded-lg text-gray-800 shadow-sm"
-                                    whileHover={{ scale: 1.02 }}
-                                  >
-                                    {/* Swap to <img src={item.img} /> when assets are provided */}
-                                    <div className="text-2xl leading-none">{item.emoji}</div>
-                                    <div className="flex-1">
-                                      <div className="text-sm font-medium">{item.name}</div>
-                                      <div className="text-xs text-gray-500">Fresh • Quality assured</div>
-                                    </div>
-                                    <div className="text-xs font-semibold text-gray-900">{item.price}</div>
-                                    <Button size="sm" className="ml-2 h-7 px-3 bg-campusRed hover:bg-campusRed/90">
-                                      Add
-                                    </Button>
-                                  </motion.div>
-                                ))}
-                              </div>
-                            </motion.div>
-                            {/* gradient masks */}
-                            <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-white to-transparent" />
-                            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent" />
-                          </div>
-
-                          {/* Bottom action */}
-                          <div className="flex items-center justify-between pt-1">
-                            <div className="text-gray-600 text-xs flex items-center space-x-1">
-                              <Clock className="w-4 h-4" />
-                              <span>Avg 30 min</span>
-                            </div>
-                            <Button className="h-9 bg-campusRed hover:bg-campusRed/90 text-white">
-                              <ShoppingCart className="w-4 h-4 mr-2" />
-                              Checkout
-                            </Button>
-                          </div>
-                        </div>
+                        </motion.div>
+                        {/* gradient masks */}
+                        <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-white to-transparent" />
+                        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent" />
                       </div>
-                    </div>
-                  </motion.div>
+
                       {/* Bottom action */}
                       <div className="flex items-center justify-between pt-1">
-                        <div className="text-white/80 text-xs flex items-center space-x-1">
+                        <div className="text-gray-600 text-xs flex items-center space-x-1">
                           <Clock className="w-4 h-4" />
                           <span>Avg 30 min</span>
                         </div>
-                        <Button className="h-9 bg-white text-black hover:bg-white/90">
+                        <Button className="h-9 bg-campusRed hover:bg-campusRed/90 text-white">
                           <ShoppingCart className="w-4 h-4 mr-2" />
                           Checkout
                         </Button>
@@ -366,6 +366,30 @@ function App() {
                   </div>
                 </div>
               </motion.div>
+
+              {/* Floating cards */}
+              <motion.div 
+                className="absolute -top-4 -right-4 bg-white p-3 rounded-xl shadow-lg"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <div className="flex items-center space-x-2">
+                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <span className="text-sm font-medium">Order Confirmed</span>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="absolute -bottom-4 -left-4 bg-white p-3 rounded-xl shadow-lg"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              >
+                <div className="flex items-center space-x-2">
+                  <Clock className="w-5 h-5 text-campusBlue" />
+                  <span className="text-sm font-medium">30 min delivery</span>
+                </div>
+              </motion.div>
+            </motion.div>
 
               {/* Floating cards */}
               <motion.div 
