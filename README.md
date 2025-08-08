@@ -1,7 +1,3 @@
-# CampusCart 🍕📱
-
-**A Food Delivery App for University of Nigeria, Nsukka (UNN) Students**
-
 # CampusCart 🛒📱
 
 **A Foodstuffs Delivery App for University of Nigeria, Nsukka (UNN) Students**
@@ -40,35 +36,7 @@ CampusCart is a React Native e-commerce application specifically designed for fo
 - **Price Monitoring**: Track foodstuff inflation and update prices accordingly
 - **Inventory Management**: Real-time stock updates for perishable items
 
-## 🚀 Features
-
-### 📱 Mobile App Features
-- **Browse Menu**: Explore various food categories (Pizza, Burgers, Asian, Mexican, Healthy, Desserts, etc.)
-- **Quick Search**: Find your favorite dishes instantly
-- **Favorites**: Save your preferred meals for quick reordering
-- **Shopping Cart**: Add multiple items and customize orders
-- **Student-Friendly Pricing**: Affordable meals with special campus discounts
-- **Real-time Delivery Tracking**: Track your order from kitchen to delivery
-- **Multiple Payment Options**: Support for meal plans, digital wallets, and cards
-
-### 🍜 Food Categories
-- 🍕 Pizza
-- 🍔 Burgers  
-- 🍜 Asian Cuisine
-- 🌮 Mexican Food
-- 🥗 Healthy Options
-- 🍰 Desserts
-- ☕ Beverages
-- 🍿 Snacks
-
-### 💻 Backend Features
-- RESTful API built with Node.js and Express
-- MongoDB database for food items and orders
-- User authentication and authorization
-- Order management system
-- Real-time order status updates
-
-## 🛠️ Tech Stack
+## ️ Tech Stack
 
 ### Frontend (React Native)
 - **React Native 0.74.3**
@@ -108,7 +76,7 @@ CampusCart is a React Native e-commerce application specifically designed for fo
 
 3. **Create environment file and configure MongoDB URI**
 
-4. **Seed the database with sample food data:**
+4. **Seed the database with sample foodstuff data:**
    ```bash
    npm run seed
    ```
