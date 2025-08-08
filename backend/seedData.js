@@ -4,50 +4,50 @@ const productsModel = require('./models/productsModel');
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
-// Sample food data for CampusCart - UNN Student Pricing in Nigerian Naira (₦)
-const foodItems = [
+// Sample foodstuff data for CampusCart - UNN Student Pricing in Nigerian Naira (₦)
+const foodstuffItems = [
   {
     image: ["https://picsum.photos/400/300?random=1", "https://picsum.photos/400/300?random=2"],
-    title: "Margherita Pizza",
-    description: "Classic pizza with fresh mozzarella, tomato sauce, and basil. Perfect for sharing!",
-    price: 2500.00,
-    priceBeforeDeal: 3000.00,
-    priceOff: 16.67,
+    title: "Local Rice (1kg)",
+    description: "Premium quality local rice, perfect for jollof rice, fried rice, and other Nigerian dishes.",
+    price: 1600.00,
+    priceBeforeDeal: 1800.00,
+    priceOff: 11.11,
     stars: 4.5,
     numberOfReview: 128,
-    ukSide: ["Medium", "Large", "Extra Large"],
-    tags: ["pizza", "vegetarian", "italian", "popular"],
+    ukSide: ["1kg", "2kg", "5kg"],
+    tags: ["grains", "rice", "staple", "essential"],
     status: {
-      icon: "🍕",
+      icon: "�",
       name: "Available"
     }
   },
   {
     image: ["https://picsum.photos/400/300?random=3", "https://picsum.photos/400/300?random=4"],
-    title: "Classic Cheeseburger",
-    description: "Juicy beef patty with cheese, lettuce, tomato, and our special sauce on a toasted bun.",
-    price: 1800.00,
-    priceBeforeDeal: 2200.00,
-    priceOff: 18.18,
+    title: "Brown Beans (1kg)",
+    description: "Fresh brown beans (honey beans), excellent source of protein for student meals.",
+    price: 2800.00,
+    priceBeforeDeal: 3200.00,
+    priceOff: 12.50,
     stars: 4.3,
     numberOfReview: 89,
-    ukSide: ["Regular", "Large", "Combo"],
-    tags: ["burger", "beef", "american", "comfort food"],
+    ukSide: ["1kg", "2kg", "3kg"],
+    tags: ["beans", "protein", "grains", "healthy"],
     status: {
-      icon: "🍔",
+      icon: "🫘",
       name: "Available"
     }
   },
   {
     image: ["https://picsum.photos/400/300?random=5", "https://picsum.photos/400/300?random=6"],
-    title: "Chicken Pad Thai",
-    description: "Authentic Thai stir-fried noodles with chicken, bean sprouts, and our signature sauce.",
-    price: 2000.00,
-    priceBeforeDeal: 2400.00,
-    priceOff: 16.67,
+    title: "White Garri (1kg)",
+    description: "Premium white garri from cassava, perfect for drinking or making eba.",
+    price: 1100.00,
+    priceBeforeDeal: 1300.00,
+    priceOff: 15.38,
     stars: 4.7,
     numberOfReview: 156,
-    ukSide: ["Regular", "Large"],
+    ukSide: ["1kg", "2kg", "5kg"],
     tags: ["thai", "chicken", "noodles", "spicy"],
     status: {
       icon: "🍜",
