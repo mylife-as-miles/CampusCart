@@ -44,18 +44,6 @@ npm run seed
 5. **Cart**: Add items with bulk discounts and checkout
 6. **Search**: Find specific foodstuff items
 
-## � Features Transformed
-
-- ✅ App name changed from "Stylish" to "CampusCart"
-- ✅ Complete rebrand from fashion to foodstuffs delivery
-- ✅ Foodstuff categories: Grains, Tubers, Vegetables, Oils, Proteins
-- ✅ Nigerian Naira pricing (₦400 - ₦2,800)
-- ✅ UNN student-focused descriptions and features
-- ✅ Backend seeder with 10 essential foodstuff items
-- ✅ Tab names updated (Foodstuffs, Favorites, Cart, Search, Profile)
-- ✅ Currency conversion from USD to Nigerian Naira
-- ✅ Student budget-friendly bulk purchasing options
-
 ## 🛠️ Next Steps
 
 1. Connect to a real MongoDB database
