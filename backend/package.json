@@ -4,12 +4,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "seed": "node seedData.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["food", "delivery", "campus", "e-commerce"],
+  "author": "CampusCart Team",
   "license": "ISC",
-  "description": "A backend server for Stylish App made by Web Minds!",
+  "description": "A backend server for CampusCart - A food delivery app for campus students!",
   "dependencies": {
     "@clerk/clerk-sdk-node": "^5.0.14",
     "bcrypt": "^5.1.1",
