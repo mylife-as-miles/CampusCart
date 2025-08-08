@@ -143,38 +143,52 @@ CampusCart is a React Native e-commerce application specifically designed for fo
 ## 📱 App Screens
 
 ### Main Navigation Tabs
-- **Menu (Home)**: Browse food categories and featured items
-- **Favorites**: View saved favorite dishes
+- **Foodstuffs (Home)**: Browse staple food categories and essential items
+- **Favorites**: View saved favorite foodstuffs
 - **Cart**: Review and checkout selected items
-- **Search**: Find specific food items
+- **Search**: Find specific foodstuff items
 - **Profile**: User account and settings
 
-## 🍔 Sample Menu Items
+## 🛒 Sample Foodstuff Items
 
-The app comes pre-loaded with delicious food options at student-friendly prices:
+The app comes pre-loaded with essential foodstuffs at current market prices (updated for 2024):
 
-- **Margherita Pizza** - ₦2,500
-- **Classic Cheeseburger** - ₦1,800  
-- **Chicken Pad Thai** - ₦2,000
-- **Caesar Salad** - ₦1,500
-- **Beef Tacos** - ₦1,700
-- **Chocolate Brownie** - ₦800
-- **Iced Coffee** - ₦600
-- **Sushi Roll Combo** - ₦3,500
-- **Veggie Burger** - ₦1,600
-- **Green Smoothie** - ₦1,200
+- **Local Rice (1kg)** - ₦1,600
+- **Brown Beans (1kg)** - ₦2,800
+- **White Garri (1kg)** - ₦1,100
+- **Yam Tubers (1 medium size)** - ₦1,000
+- **Fresh Tomatoes (1kg)** - ₦1,850
+- **Red Onions (1kg)** - ₦1,200
+- **Palm Oil (1 liter)** - ₦1,700
+- **Stock Fish (500g)** - ₦2,100
+- **Crayfish (250g)** - ₦950
+- **Maggi Cubes (pack of 50)** - ₦750
+- **Pure Water (bag of 20 sachets)** - ₦400
+- **Bread (large loaf)** - ₦1,200
+
+## 📈 Market Insights
+- Food inflation in Nigeria affects staple food prices significantly
+- Students can save up to 15% through bulk purchases
+- Real-time price tracking helps students make informed buying decisions
+- Seasonal variations affect prices of fresh produce
 
 ## 🔧 Development
 
 ### Backend API Endpoints
-- `GET /api/products/` - Get all food items
-- `GET /api/products/:id` - Get specific food item
-- `POST /api/products/` - Create new food item
-- `PUT /api/products/:id` - Update food item
-- `DELETE /api/products/:id` - Delete food item
+- `GET /api/products/` - Get all foodstuff items
+- `GET /api/products/:id` - Get specific foodstuff item
+- `POST /api/products/` - Create new foodstuff item
+- `PUT /api/products/:id` - Update foodstuff item
+- `DELETE /api/products/:id` - Delete foodstuff item
+
+### Special Features
+- **Price Update System**: Automatically updates foodstuff prices based on market trends
+- **Bulk Discount Calculator**: Applies discounts for larger quantity purchases
+- **Perishable Item Alerts**: Notifies users about fresh produce availability
+- **Student Budget Planner**: Helps students plan their foodstuff purchases within budget
 
 ---
 
-**Happy Eating! 🍽️**
+**Happy Shopping! 🛒**
 
-*CampusCart - Fresh food delivered fast to UNN students*
+*CampusCart - Essential foodstuffs delivered fast to UNN students*
