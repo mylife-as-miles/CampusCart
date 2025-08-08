@@ -390,30 +390,6 @@ function App() {
                 </div>
               </motion.div>
             </motion.div>
-
-              {/* Floating cards */}
-              <motion.div 
-                className="absolute -top-4 -right-4 bg-white p-3 rounded-xl shadow-lg"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              >
-                <div className="flex items-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-green-500" />
-                  <span className="text-sm font-medium">Order Confirmed</span>
-                </div>
-              </motion.div>
-
-              <motion.div 
-                className="absolute -bottom-4 -left-4 bg-white p-3 rounded-xl shadow-lg"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              >
-                <div className="flex items-center space-x-2">
-                  <Clock className="w-5 h-5 text-campusBlue" />
-                  <span className="text-sm font-medium">30 min delivery</span>
-                </div>
-              </motion.div>
-            </motion.div>
           </div>
         </div>
       </section>
