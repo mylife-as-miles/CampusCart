@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { 
   ArrowRight, 
   Clock, 
@@ -15,15 +15,22 @@ import {
   Smartphone,
   Heart,
   Menu,
-  X
+  X,
+  Apple,
+  Play
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrollY, setScrollY] = useState(0)
+  const phoneRef = useRef<HTMLDivElement | null>(null)
+  const tiltX = useMotionValue(0)
+  const tiltY = useMotionValue(0)
+  const rX = useSpring(tiltX, { stiffness: 200, damping: 20 })
+  const rY = useSpring(tiltY, { stiffness: 200, damping: 20 })
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -34,6 +41,23 @@ function App() {
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 }
+  }
+  const handleTilt = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const bounds = phoneRef.current?.getBoundingClientRect()
+    if (!bounds) return
+    const x = e.clientX - bounds.left
+    const y = e.clientY - bounds.top
+    const midX = bounds.width / 2
+    const midY = bounds.height / 2
+    const rotateY = ((x - midX) / midX) * 10 // -10..10
+    const rotateX = (-(y - midY) / midY) * 10 // -10..10
+    tiltX.set(rotateX)
+    tiltY.set(rotateY)
+  }
+
+  const resetTilt = () => {
+    tiltX.set(0)
+    tiltY.set(0)
   }
 
   const stagger = {
@@ -180,119 +204,153 @@ function App() {
                 </Button>
               </motion.div>
 
+              {/* Realistic store badges */}
+              <motion.div 
+                className="mt-6 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
+                variants={fadeInUp}
+                transition={{ duration: 0.6, delay: 0.55 }}
+              >
+                <a
+                  href="#"
+                  className="inline-flex items-center rounded-xl bg-black text-white px-4 py-2 shadow-md hover:shadow-lg transition-shadow"
+                  aria-label="Download on the App Store"
+                >
+                  <Apple className="w-6 h-6 mr-3" />
+                  <span className="leading-tight">
+                    <span className="block text-[10px] uppercase tracking-wide text-white/80">Download on the</span>
+                    <span className="block text-sm font-semibold">App Store</span>
+                  </span>
+                </a>
+                <a
+                  href="#"
+                  className="inline-flex items-center rounded-xl bg-black text-white px-4 py-2 shadow-md hover:shadow-lg transition-shadow"
+                  aria-label="Get it on Google Play"
+                >
+                  <Play className="w-6 h-6 mr-3" />
+                  <span className="leading-tight">
+                    <span className="block text-[10px] uppercase tracking-wide text-white/80">Get it on</span>
+                    <span className="block text-sm font-semibold">Google Play</span>
+                  </span>
+                </a>
+              </motion.div>
+
               <motion.div 
                 className="mt-12 grid grid-cols-3 gap-8 text-center lg:text-left"
-                variants={stagger}
-              >
-                {[
-                  { number: '5K+', label: 'Happy Students' },
-                  { number: '50+', label: 'Food Categories' },
-                  { number: '30min', label: 'Avg Delivery' }
+                <motion.div 
+                  className="relative"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                >
                 ].map((stat, index) => (
-                  <motion.div key={index} variants={fadeInUp} transition={{ duration: 0.6, delay: index * 0.1 }}>
-                    <div className="text-2xl md:text-3xl font-bold text-gray-900">{stat.number}</div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
+                  <motion.div 
+                    ref={phoneRef}
+                    className="relative mx-auto w-[320px] h-[640px] will-change-transform"
+                    style={{ rotateX: rX, rotateY: rY, transformPerspective: 1000 }}
+                    onMouseMove={handleTilt}
+                    onMouseLeave={resetTilt}
+                  >
+                    <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-zinc-200 to-zinc-50 p-[6px] shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-white/60">
+                      <div className="relative w-full h-full rounded-[2.6rem] overflow-hidden bg-white">
+                        {/* Dynamic Island / notch */}
+                        <div className="absolute top-3 left-1/2 -translate-x-1/2 w-32 h-9 bg-black rounded-full ring-1 ring-black/70 shadow-[inset_0_-1px_2px_rgba(255,255,255,0.35)]" />
+                        {/* Side buttons */}
+                        <div className="absolute left-[-2px] top-24 w-1 h-14 bg-zinc-300 rounded-r-full" />
+                        <div className="absolute left-[-2px] top-44 w-1 h-10 bg-zinc-300 rounded-r-full" />
+                        <div className="absolute right-[-2px] top-36 w-1 h-20 bg-zinc-300 rounded-l-full" />
 
-            <motion.div 
-              className="relative"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              {/* iPhone frame */}
-              <motion.div 
-                className="relative mx-auto w-[320px] h-[640px]"
-                whileHover={{ rotateX: 4, rotateY: -4 }}
-                transition={{ type: 'spring', stiffness: 120, damping: 12 }}
-              >
-                <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-zinc-200 to-zinc-50 p-[6px] shadow-[0_20px_60px_rgba(0,0,0,0.25)] border border-white/60">
-                  <div className="relative w-full h-full rounded-[2.6rem] overflow-hidden bg-black">
-                    {/* Dynamic Island / notch */}
-                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-32 h-9 bg-black rounded-full ring-1 ring-white/10 shadow-[inset_0_-1px_2px_rgba(255,255,255,0.25)]" />
-                    {/* Side buttons */}
-                    <div className="absolute left-[-2px] top-24 w-1 h-14 bg-zinc-300 rounded-r-full" />
-                    <div className="absolute left-[-2px] top-44 w-1 h-10 bg-zinc-300 rounded-r-full" />
-                    <div className="absolute right-[-2px] top-36 w-1 h-20 bg-zinc-300 rounded-l-full" />
+                        {/* Subtle background accents */}
+                        <div className="absolute inset-0 bg-[radial-gradient(1200px_500px_at_50%_-20%,rgba(67,146,249,0.15),transparent_60%),radial-gradient(800px_400px_at_50%_120%,rgba(248,55,88,0.12),transparent_60%)]" />
 
-                    {/* Screen content */}
-                    <div className="absolute inset-0 bg-[radial-gradient(1200px_500px_at_50%_-20%,rgba(248,55,88,0.25),transparent_60%),radial-gradient(800px_400px_at_50%_120%,rgba(67,146,249,0.25),transparent_60%)]" />
-                    <div className="relative z-10 p-4 space-y-4">
-                      <div className="flex items-center justify-between text-white/90 pt-6">
-                        <div className="flex items-center space-x-2">
-                          <MapPin className="w-4 h-4" />
-                          <span className="text-xs">UNN Campus</span>
-                        </div>
-                        <div className="text-xs">12:45</div>
-                      </div>
-
-                      {/* Search */}
-                      <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-2">
-                        <input
-                          readOnly
-                          placeholder="Search foodstuffs..."
-                          className="w-full bg-transparent text-white/90 placeholder-white/70 text-xs outline-none"
-                        />
-                      </div>
-
-                      {/* Category pills */}
-                      <div className="flex space-x-2 overflow-x-auto no-scrollbar">
-                        {['Rice', 'Beans', 'Garri', 'Palm Oil', 'Spices', 'Veggies'].map((c, i) => (
-                          <div
-                            key={c}
-                            className={`flex-shrink-0 px-3 py-1.5 rounded-full text-[10px] ${i === 0 ? 'bg-campusRed text-white' : 'bg-white/10 text-white/80 border border-white/10'}`}
-                          >
-                            {c}
+                        <div className="relative z-10 p-4 space-y-4">
+                          <div className="flex items-center justify-between text-gray-700 pt-6">
+                            <div className="flex items-center space-x-2">
+                              <MapPin className="w-4 h-4" />
+                              <span className="text-xs">UNN Campus</span>
+                            </div>
+                            <div className="text-xs">12:45</div>
                           </div>
-                        ))}
-                      </div>
 
-                      {/* Auto-scrolling product list */}
-                      <div className="relative h-72 overflow-hidden rounded-xl">
-                        <motion.div
-                          className="absolute inset-0"
-                          animate={{ y: [0, -220, 0] }}
-                          transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-                        >
-                          <div className="space-y-3">
-                            {[
-                              { emoji: '�', name: 'Local Rice (1kg)', price: '₦1,600' },
-                              { emoji: '🫘', name: 'Brown Beans (1kg)', price: '₦2,800' },
-                              { emoji: '🥣', name: 'Garri (2kg)', price: '₦2,200' },
-                              { emoji: '🫙', name: 'Palm Oil (1L)', price: '₦3,400' },
-                              { emoji: '🧂', name: 'Spices Combo', price: '₦1,200' },
-                              { emoji: '🧅', name: 'Veggies Mix', price: '₦1,000' },
-                            ].concat([
-                              { emoji: '�', name: 'Local Rice (1kg)', price: '₦1,600' },
-                              { emoji: '🫘', name: 'Brown Beans (1kg)', price: '₦2,800' },
-                              { emoji: '🥣', name: 'Garri (2kg)', price: '₦2,200' },
-                            ]).map((item, idx) => (
-                              <motion.div
-                                key={idx}
-                                className="flex items-center space-x-3 p-3 bg-white/10 backdrop-blur-md border border-white/10 rounded-lg text-white"
-                                whileHover={{ scale: 1.02 }}
+                          {/* Search */}
+                          <div className="bg-white border border-gray-200 rounded-xl p-2 shadow-sm">
+                            <input
+                              readOnly
+                              placeholder="Search foodstuffs..."
+                              className="w-full bg-transparent text-gray-700 placeholder-gray-400 text-xs outline-none"
+                            />
+                          </div>
+
+                          {/* Category pills */}
+                          <div className="flex space-x-2 overflow-x-auto no-scrollbar">
+                            {['Rice', 'Beans', 'Garri', 'Palm Oil', 'Spices', 'Veggies'].map((c, i) => (
+                              <div
+                                key={c}
+                                className={`flex-shrink-0 px-3 py-1.5 rounded-full text-[10px] ${i === 0 ? 'bg-campusRed text-white' : 'bg-gray-100 text-gray-700 border border-gray-200'}`}
                               >
-                                <div className="text-2xl">{item.emoji}</div>
-                                <div className="flex-1">
-                                  <div className="text-sm font-medium">{item.name}</div>
-                                  <div className="text-xs text-white/80">Fresh • Quality assured</div>
-                                </div>
-                                <div className="text-xs font-semibold">{item.price}</div>
-                                <Button size="sm" className="ml-2 h-7 px-3 bg-campusRed hover:bg-campusRed/90">
-                                  Add
-                                </Button>
-                              </motion.div>
+                                {c}
+                              </div>
                             ))}
                           </div>
-                        </motion.div>
-                        {/* gradient masks */}
-                        <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-black to-transparent" />
-                        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black to-transparent" />
-                      </div>
 
+                          {/* Auto-scrolling product list (supports image fallback) */}
+                          <div className="relative h-72 overflow-hidden rounded-xl">
+                            <motion.div
+                              className="absolute inset-0"
+                              animate={{ y: [0, -220, 0] }}
+                              transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
+                            >
+                              <div className="space-y-3">
+                                {[
+                                  { emoji: '🍚', name: 'Local Rice (1kg)', price: '₦1,600' },
+                                  { emoji: '🫘', name: 'Brown Beans (1kg)', price: '₦2,800' },
+                                  { emoji: '🥣', name: 'Garri (2kg)', price: '₦2,200' },
+                                  { emoji: '🫙', name: 'Palm Oil (1L)', price: '₦3,400' },
+                                  { emoji: '🧂', name: 'Spices Combo', price: '₦1,200' },
+                                  { emoji: '🧅', name: 'Veggies Mix', price: '₦1,000' },
+                                ].concat([
+                                  { emoji: '🍚', name: 'Local Rice (1kg)', price: '₦1,600' },
+                                  { emoji: '🫘', name: 'Brown Beans (1kg)', price: '₦2,800' },
+                                  { emoji: '🥣', name: 'Garri (2kg)', price: '₦2,200' },
+                                ]).map((item, idx) => (
+                                  <motion.div
+                                    key={idx}
+                                    className="flex items-center space-x-3 p-3 bg-white border border-gray-200 rounded-lg text-gray-800 shadow-sm"
+                                    whileHover={{ scale: 1.02 }}
+                                  >
+                                    {/* Swap to <img src={item.img} /> when assets are provided */}
+                                    <div className="text-2xl leading-none">{item.emoji}</div>
+                                    <div className="flex-1">
+                                      <div className="text-sm font-medium">{item.name}</div>
+                                      <div className="text-xs text-gray-500">Fresh • Quality assured</div>
+                                    </div>
+                                    <div className="text-xs font-semibold text-gray-900">{item.price}</div>
+                                    <Button size="sm" className="ml-2 h-7 px-3 bg-campusRed hover:bg-campusRed/90">
+                                      Add
+                                    </Button>
+                                  </motion.div>
+                                ))}
+                              </div>
+                            </motion.div>
+                            {/* gradient masks */}
+                            <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-white to-transparent" />
+                            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white to-transparent" />
+                          </div>
+
+                          {/* Bottom action */}
+                          <div className="flex items-center justify-between pt-1">
+                            <div className="text-gray-600 text-xs flex items-center space-x-1">
+                              <Clock className="w-4 h-4" />
+                              <span>Avg 30 min</span>
+                            </div>
+                            <Button className="h-9 bg-campusRed hover:bg-campusRed/90 text-white">
+                              <ShoppingCart className="w-4 h-4 mr-2" />
+                              Checkout
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
                       {/* Bottom action */}
                       <div className="flex items-center justify-between pt-1">
                         <div className="text-white/80 text-xs flex items-center space-x-1">
