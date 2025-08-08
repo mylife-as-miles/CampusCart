@@ -90,11 +90,11 @@ const randomTitle = (): string =>
   titles[Math.floor(Math.random() * titles.length)];
 
 const randomPrice = (): number =>
-  parseFloat((Math.floor(Math.random() * 30) + 5).toFixed(2));
+  parseFloat((Math.floor(Math.random() * 2000) + 500).toFixed(2));
 
 const randomPriceBeforeDeal = (): number =>
   parseFloat(
-    (randomPrice() + (Math.floor(Math.random() * 10) + 2)).toFixed(2),
+    (randomPrice() + (Math.floor(Math.random() * 800) + 200)).toFixed(2),
   );
 
 const randomPriceOff = (price: number, priceBeforeDeal: number): string =>
