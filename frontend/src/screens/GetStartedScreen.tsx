@@ -24,11 +24,11 @@ const GetStartedScreen = (props: Props) => {
       <View className="h-[60vh]" />
       <View className="px-3 h-[40vh] pt-3 shadow-md bg-black-100/30 w-full">
         <Text className="text-white text-4xl text-center font-bold ">
-          You want Authentic, here you go!
+          Hungry? We've got you covered!
         </Text>
         <Text className="text-[#F2F2F2] text-lg font-medium text-center mt-3">
           {' '}
-          Find it here, buy it now!{' '}
+          Fresh food delivered fast to your campus location{' '}
         </Text>
 
         <CustomButton
