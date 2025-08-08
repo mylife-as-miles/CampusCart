@@ -113,13 +113,13 @@ const ProductData: ProductTypes[] = Array.from(
       _id: `food_${index + 1}`,
       image: [randomImage(), randomImage(), randomImage()],
       title: randomTitle(),
-      description: 'Delicious and freshly prepared food item available for delivery to your campus location.',
+      description: 'Essential foodstuff item perfect for student cooking and meal preparation. Fresh and quality guaranteed.',
       price: price,
       priceBeforeDeal: priceBeforeDeal,
       priceOff: randomPriceOff(price, priceBeforeDeal),
       stars: randomStars(),
       numberOfReview: randomNumberOfReview(),
-      tags: ['food', 'delivery', 'campus'],
+      tags: ['foodstuff', 'delivery', 'campus', 'essential'],
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       __v: 0,
@@ -130,7 +130,7 @@ const ProductData: ProductTypes[] = Array.from(
 
  */
 // TabBar data
-const tabName = ['Menu', 'Favorites', 'Cart', 'Search', 'Profile'];
+const tabName = ['Foodstuffs', 'Favorites', 'Cart', 'Search', 'Profile'];
 const TabBarData: TabBarTypes[] = [
   {
     title: tabName[0],
