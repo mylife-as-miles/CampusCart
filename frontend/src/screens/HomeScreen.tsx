@@ -59,18 +59,18 @@ const TabBarItem: React.FC<TabBarItemProps> = ({
 };
 type Props = {};
 export type RouteTabsParamList = {
-  Menu: undefined;
-  Favorites: undefined;
+  Home: undefined;
+  Wishlist: undefined;
   Cart: {itemDetails: ItemDetails}  | undefined;
   Search: {query: string} | undefined;
-  Profile: undefined;
+  Setting: undefined;
 };
 const HomeScreen = (props: Props) => {
   const Tab = createBottomTabNavigator<RouteTabsParamList>();
 
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Menu"
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
