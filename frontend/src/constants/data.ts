@@ -12,60 +12,78 @@ const randomImage = (): string =>
 const SplashData: SplashTypes[] = [
   {
     image: images.splash1,
-    title: 'Choose Products',
+    title: 'Browse Menu',
     description:
-      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+      'Discover delicious meals from your favorite campus restaurants and local eateries. Fresh food delivered right to your dorm or study spot.',
   },
   {
     image: images.splash2,
-    title: 'Make Payment',
+    title: 'Quick Ordering',
     description:
-      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+      'Easy payment with student discounts available. Multiple payment options including meal plans and digital wallets.',
   },
   {
     image: images.splash3,
-    title: 'Get Your Order',
+    title: 'Fast Delivery',
     description:
-      'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+      'Get your food delivered quickly to anywhere on campus. Track your order in real-time from kitchen to your location.',
   },
 ];
 const CategoriesData: FeaturesTypes[] = [
   {
     image: randomImage(),
-    title: 'Beauty',
+    title: 'Pizza',
   },
   {
     image: randomImage(),
-    title: 'Fashion',
+    title: 'Burgers',
   },
   {
     image: randomImage(),
-    title: 'Kids',
+    title: 'Asian',
   },
   {
     image: randomImage(),
-    title: 'Mens',
+    title: 'Mexican',
   },
   {
     image: randomImage(),
-    title: 'Womans',
+    title: 'Healthy',
+  },
+  {
+    image: randomImage(),
+    title: 'Desserts',
+  },
+  {
+    image: randomImage(),
+    title: 'Beverages',
+  },
+  {
+    image: randomImage(),
+    title: 'Snacks',
   },
 ];
 
-// Random Title
+// Random Food Titles
 const titles = [
-  'Women Printed Kurta',
-  'HRX by Hrithik Roshan',
-  "IWC Schaffhausen 2021 Pilot's Watch",
-  'Labbin White Sneakers',
-  'Black Winter Jacket',
-  'Mens Starry Printed Shirt',
-  'Black Dress',
-  'Pink Embroidered Dress',
-  'Realme 7',
-  'Black Jacket',
-  'D7200 Digital Camera',
-  "Men's & Boys Formal Shoes",
+  'Margherita Pizza',
+  'Classic Cheeseburger',
+  'Chicken Pad Thai',
+  'Beef Tacos',
+  'Caesar Salad',
+  'Chocolate Brownie',
+  'Iced Coffee',
+  'Club Sandwich',
+  'Sushi Roll',
+  'Pepperoni Pizza',
+  'Veggie Burger',
+  'Chicken Wings',
+  'Pasta Carbonara',
+  'Fish and Chips',
+  'Green Smoothie',
+  'Chicken Burrito',
+  'Chocolate Chip Cookies',
+  'Bubble Tea',
 ];
 
 const randomTitle = (): string =>
