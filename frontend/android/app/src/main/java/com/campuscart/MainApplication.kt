@@ -1,4 +1,4 @@
-package com.front_end
+package com.campuscart
 import android.os.Bundle; 
 import org.devio.rn.splashscreen.SplashScreen; 
 import android.app.Application
