@@ -130,7 +130,7 @@ const ProductData: ProductTypes[] = Array.from(
 
  */
 // TabBar data
-const tabName = ['Home', 'Wishlist', 'Cart', 'Search', 'Setting'];
+const tabName = ['Menu', 'Favorites', 'Cart', 'Search', 'Profile'];
 const TabBarData: TabBarTypes[] = [
   {
     title: tabName[0],
@@ -141,14 +141,14 @@ const TabBarData: TabBarTypes[] = [
   },
   {
     title: tabName[1],
-    image: icons.home,
+    image: icons.heart,
     link: tabName[1],
     inActiveColor: '#000000',
     activeColor: '#EB3030',
   },
   {
     title: tabName[2],
-    image: icons.home,
+    image: icons.cart_circle,
     link: tabName[2],
     inActiveColor: '#050404',
     activeColor: '#EB3030',
@@ -157,7 +157,7 @@ const TabBarData: TabBarTypes[] = [
   },
   {
     title: tabName[3],
-    image: icons.home,
+    image: icons.search,
     link: tabName[3],
     inActiveColor: '#000000',
     activeColor: '#EB3030',
