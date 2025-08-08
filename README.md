@@ -141,4 +141,4 @@ The app comes pre-loaded with delicious food options at student-friendly prices:
 
 **Happy Eating! 🍽️**
 
-*CampusCart - Fresh food delivered fast to your campus location*
+*CampusCart - Fresh food delivered fast to UNN students*
