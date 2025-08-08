@@ -13,7 +13,6 @@ import {
   Zap,
   Shield,
   Smartphone,
-  CreditCard,
   Heart,
   Menu,
   X
@@ -34,8 +33,7 @@ function App() {
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+    animate: { opacity: 1, y: 0 }
   }
 
   const stagger = {
@@ -153,6 +151,7 @@ function App() {
               <motion.h1 
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
                 variants={fadeInUp}
+                transition={{ duration: 0.6 }}
               >
                 Your Favorite{' '}
                 <span className="text-campusRed">Campus Food</span>
@@ -164,6 +163,7 @@ function App() {
               <motion.p 
                 className="mt-6 text-lg text-gray-600 max-w-2xl"
                 variants={fadeInUp}
+                transition={{ duration: 0.6, delay: 0.2 }}
               >
                 Skip the long cafeteria lines! Order from your favorite campus restaurants 
                 and get delicious food delivered right to your dorm, library, or anywhere on campus.
