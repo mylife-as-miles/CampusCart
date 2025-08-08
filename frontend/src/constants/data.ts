@@ -14,19 +14,19 @@ const SplashData: SplashTypes[] = [
     image: images.splash1,
     title: 'Browse Menu',
     description:
-      'Discover delicious meals from your favorite campus restaurants and local eateries. Fresh food delivered right to your dorm or study spot.',
+      'Discover delicious meals from UNN campus restaurants and local eateries. Fresh food delivered right to your hostel or study spot.',
   },
   {
     image: images.splash2,
     title: 'Quick Ordering',
     description:
-      'Easy payment with student discounts available. Multiple payment options including meal plans and digital wallets.',
+      'Easy payment with student-friendly prices in Nigerian Naira. Multiple payment options available for UNN students.',
   },
   {
     image: images.splash3,
     title: 'Fast Delivery',
     description:
-      'Get your food delivered quickly to anywhere on campus. Track your order in real-time from kitchen to your location.',
+      'Get your food delivered quickly to anywhere on UNN campus. Track your order in real-time from kitchen to your location.',
   },
 ];
 const CategoriesData: FeaturesTypes[] = [
