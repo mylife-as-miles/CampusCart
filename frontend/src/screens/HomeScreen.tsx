@@ -59,11 +59,11 @@ const TabBarItem: React.FC<TabBarItemProps> = ({
 };
 type Props = {};
 export type RouteTabsParamList = {
-  Home: undefined;
-  Wishlist: undefined;
+  Menu: undefined;
+  Favorites: undefined;
   Cart: {itemDetails: ItemDetails}  | undefined;
   Search: {query: string} | undefined;
-  Setting: undefined;
+  Profile: undefined;
 };
 const HomeScreen = (props: Props) => {
   const Tab = createBottomTabNavigator<RouteTabsParamList>();
@@ -116,6 +116,26 @@ const HomeScreen = (props: Props) => {
         }}
       />
 
+            <Tab.Screen
+        name="Menu"
+        component={HomeTab}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: ({focused}) => (
+            <TabBarItem source={icons.home} focused={focused} name="Menu" />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Favorites"
+        component={WishlistTab}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: ({focused}) => (
+            <TabBarItem source={icons.heart} focused={focused} name="Favorites" />
+          ),
+        }}
+      />
       <Tab.Screen
         name="Cart"
         component={CartTab}
@@ -123,11 +143,31 @@ const HomeScreen = (props: Props) => {
           tabBarLabel: '',
           tabBarIcon: ({focused}) => (
             <TabBarItem
-              source={icons.cart}
+              source={icons.cart_circle}
               focused={focused}
-              cart
+              cart={true}
               name="Cart"
             />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Search"
+        component={SearchTab}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: ({focused}) => (
+            <TabBarItem source={icons.search} focused={focused} name="Search" />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={SettingTab}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: ({focused}) => (
+            <TabBarItem source={icons.profile} focused={focused} name="Profile" />
           ),
         }}
       />
