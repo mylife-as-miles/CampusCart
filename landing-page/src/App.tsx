@@ -172,6 +172,7 @@ function App() {
               <motion.div 
                 className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
                 variants={fadeInUp}
+                transition={{ duration: 0.6, delay: 0.4 }}
               >
                 <Button size="lg" className="bg-campusRed hover:bg-campusRed/90">
                   <Smartphone className="w-5 h-5 mr-2" />
@@ -192,7 +193,7 @@ function App() {
                   { number: '200+', label: 'Campus Restaurants' },
                   { number: '15min', label: 'Avg Delivery' }
                 ].map((stat, index) => (
-                  <motion.div key={index} variants={fadeInUp}>
+                  <motion.div key={index} variants={fadeInUp} transition={{ duration: 0.6, delay: index * 0.1 }}>
                     <div className="text-2xl md:text-3xl font-bold text-gray-900">{stat.number}</div>
                     <div className="text-sm text-gray-600">{stat.label}</div>
                   </motion.div>
@@ -345,7 +346,7 @@ function App() {
                 description: 'All restaurants are verified and rated by fellow students. Quality you can trust.'
               }
             ].map((feature, index) => (
-              <motion.div key={index} variants={fadeInUp}>
+              <motion.div key={index} variants={fadeInUp} transition={{ duration: 0.6, delay: index * 0.2 }}>
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                   <CardHeader className="text-center">
                     <div className="w-16 h-16 bg-gradient-to-r from-campusRed to-campusBlue rounded-full flex items-center justify-center mx-auto mb-4 text-white">
