@@ -70,7 +70,7 @@ const HomeTab = (props: Props) => {
       <CustomSearch initialQuery="" />
       {/* features */}
       <View className="flex my-5 flex-row mx-5 justify-between ">
-        <Text className="text-2xl font-bold ">All Features </Text>
+        <Text className="text-2xl font-bold ">Food Categories </Text>
         <View className="flex flex-row gap-x-3 ">
           {FeaturesData.map(item => (
             <View
