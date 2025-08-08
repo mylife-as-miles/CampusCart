@@ -122,7 +122,7 @@ const HomeScreen = (props: Props) => {
         options={{
           tabBarLabel: '',
           tabBarIcon: ({focused}) => (
-            <TabBarItem source={icons.home} focused={focused} name="Menu" />
+            <TabBarItem source={icons.home} focused={focused} name="Foodstuffs" />
           ),
         }}
       />

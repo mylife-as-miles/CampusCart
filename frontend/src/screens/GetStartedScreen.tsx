@@ -28,7 +28,7 @@ const GetStartedScreen = (props: Props) => {
         </Text>
         <Text className="text-[#F2F2F2] text-lg font-medium text-center mt-3">
           {' '}
-          Fresh food delivered fast to UNN hostels and campus locations{' '}
+          Essential foodstuffs delivered fast to UNN hostels and campus locations{' '}
         </Text>
 
         <CustomButton
