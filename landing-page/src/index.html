@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CampusCart - Your Campus Food Delivery</title>
+    <meta name="description" content="Order delicious food from your favorite campus restaurants. Fast delivery, great prices, amazing taste!" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/images/logo.png" alt="CampusCart Logo" class="logo-img">
+                <span class="logo-text">CampusCart</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#foodstuffs" class="nav-link">Foodstuffs</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#download" class="nav-link">Download</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Essential <span class="highlight">Foodstuffs</span> 
+                        Delivered Fast to <span class="highlight">UNN Students</span>
+                    </h1>
+                    <p class="hero-description">
+                        Get your favorite staple foods and groceries delivered directly to your hostel at University of Nigeria, Nsukka. Student-friendly prices with bulk discounts available.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">5,000+</span>
+                            <span class="stat-label">Happy Students</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Food Categories</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">30min</span>
+                            <span class="stat-label">Avg Delivery</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#download" class="btn btn-primary">
+                            <i class="fas fa-download"></i>
+                            Download App
+                        </a>
+                        <a href="#how-it-works" class="btn btn-secondary">
+                            <i class="fas fa-play"></i>
+                            Watch Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="phone-mockup">
+                        <img src="assets/images/app-mockup.png" alt="CampusCart App Interface" class="app-screen">
+                        <div class="floating-card card-1">
+                            <div class="card-content">
+                                <img src="assets/images/rice.png" alt="Rice" class="card-image">
+                                <div class="card-info">
+                                    <h4>Local Rice (1kg)</h4>
+                                    <p class="price">₦1,600</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="floating-card card-2">
+                            <div class="card-content">
+                                <img src="assets/images/beans.png" alt="Beans" class="card-image">
+                                <div class="card-info">
+                                    <h4>Brown Beans (1kg)</h4>
+                                    <p class="price">₦2,800</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose CampusCart?</h2>
+                <p class="section-description">Designed specifically for UNN students with features that matter most</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your foodstuffs delivered to your hostel in 30 minutes or less</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3>Student Prices</h3>
+                    <p>Affordable pricing with special discounts for bulk purchases</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Quality Assured</h3>
+                    <p>Fresh, quality foodstuffs from trusted vendors around UNN</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Easy Ordering</h3>
+                    <p>Simple, intuitive app interface designed for quick ordering</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Multiple Payments</h3>
+                    <p>Pay with cards, digital wallets, or student allowances</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Real-time Tracking</h3>
+                    <p>Track your order from store to delivery in real-time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Foodstuffs Categories Section -->
+    <section id="foodstuffs" class="foodstuffs">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Essential Foodstuff Categories</h2>
+                <p class="section-description">Browse through our wide selection of staple foods and groceries</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="assets/images/grains.png" alt="Grains & Cereals" class="category-img">
+                    </div>
+                    <h3>Grains & Cereals</h3>
+                    <p>Rice, Beans, Garri, Maize</p>
+                    <span class="item-count">15+ items</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="assets/images/tubers.png" alt="Tubers & Roots" class="category-img">
+                    </div>
+                    <h3>Tubers & Roots</h3>
+                    <p>Yam, Cassava, Potato, Sweet Potato</p>
+                    <span class="item-count">8+ items</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="assets/images/vegetables.png" alt="Vegetables" class="category-img">
+                    </div>
+                    <h3>Fresh Vegetables</h3>
+                    <p>Tomatoes, Peppers, Onions, Greens</p>
+                    <span class="item-count">20+ items</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="assets/images/oils.png" alt="Cooking Oils" class="category-img">
+                    </div>
+                    <h3>Cooking Oils</h3>
+                    <p>Palm oil, Vegetable oil, Groundnut oil</p>
+                    <span class="item-count">6+ items</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="assets/images/proteins.png" alt="Proteins" class="category-img">
+                    </div>
+                    <h3>Proteins</h3>
+                    <p>Stock fish, Crayfish, Dry fish</p>
+                    <span class="item-count">12+ items</span>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="assets/images/spices.png" alt="Spices" class="category-img">
+                    </div>
+                    <h3>Spices & Seasonings</h3>
+                    <p>Salt, Maggi, Curry, Thyme</p>
+                    <span class="item-count">10+ items</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How CampusCart Works</h2>
+                <p class="section-description">Simple steps to get your foodstuffs delivered</p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Browse & Select</h3>
+                        <p>Browse through our categories and select your favorite foodstuffs</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Add to Cart</h3>
+                        <p>Add items to your cart and choose quantities that fit your budget</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Place Order</h3>
+                        <p>Provide your hostel address and choose your payment method</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Get Delivered</h3>
+                        <p>Track your order and receive fresh foodstuffs at your doorstep</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Students Say</h2>
+                <p class="section-description">Hear from UNN students using CampusCart</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"CampusCart has made my life so much easier! No more trekking to Ogige Market. Fast delivery and great prices."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/images/student1.jpg" alt="Chioma" class="author-image">
+                        <div class="author-info">
+                            <h4>Chioma O.</h4>
+                            <span>Computer Science, 300L</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The bulk discount feature saved me over ₦3,000 last month! Perfect for sharing costs with roommates."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/images/student2.jpg" alt="Emmanuel" class="author-image">
+                        <div class="author-info">
+                            <h4>Emmanuel A.</h4>
+                            <span>Engineering, 400L</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Fresh vegetables delivered right to my hostel. The app is so easy to use and delivery is always on time."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/images/student3.jpg" alt="Fatima" class="author-image">
+                        <div class="author-info">
+                            <h4>Fatima M.</h4>
+                            <span>Medicine, 500L</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content">
+                <div class="download-text">
+                    <h2>Download CampusCart Today</h2>
+                    <p>Join thousands of UNN students already using CampusCart for their foodstuff needs</p>
+                    <div class="download-buttons">
+                        <a href="#" class="download-btn">
+                            <img src="assets/images/google-play.png" alt="Get it on Google Play">
+                        </a>
+                        <a href="#" class="download-btn">
+                            <img src="assets/images/app-store.png" alt="Download on App Store">
+                        </a>
+                    </div>
+                    <div class="download-stats">
+                        <div class="stat">
+                            <i class="fas fa-download"></i>
+                            <span>5,000+ Downloads</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-star"></i>
+                            <span>4.8 Rating</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="download-image">
+                    <img src="assets/images/phone-mockup-2.png" alt="CampusCart Mobile App" class="phone-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions? We're here to help UNN students anytime</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+234 806 123 4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@campuscart.ng</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>University of Nigeria, Nsukka</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="subject" name="subject" required>
+                                <option value="">Select Subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">App Support</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="feedback">Feedback</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="CampusCart" class="footer-logo-img">
+                        <span class="footer-logo-text">CampusCart</span>
+                    </div>
+                    <p>Essential foodstuffs delivered fast to UNN students. Making campus life easier, one delivery at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#foodstuffs">Foodstuffs</a></li>
+                        <li><a href="#download">Download</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Delivery Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Student Areas</h3>
+                    <ul>
+                        <li><a href="#">Alvan Ikoku</a></li>
+                        <li><a href="#">Okpara Square</a></li>
+                        <li><a href="#">Zik Flats</a></li>
+                        <li><a href="#">New Layout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CampusCart. All rights reserved. Made with ❤️ for UNN students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>
