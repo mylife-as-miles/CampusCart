@@ -54,3 +54,11 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* Smooth scrolling and anchor offset */
+html {
+  scroll-behavior: smooth;
+}
+section[id] {
+  scroll-margin-top: 5.5rem; /* roughly header height */
+}

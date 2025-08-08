@@ -100,7 +100,7 @@ function App() {
         )}
       </header>
       {/* Hero Section */}
-      <section id="home" className="relative pt-20 pb-16 overflow-hidden">
+  <section id="home" className="relative pt-24 md:pt-28 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-red-50" />
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -199,7 +199,7 @@ function App() {
             >
               <div style={{ perspective: '1200px' }}>
                 <motion.div
-                  className="relative mx-auto w-[320px] h-[640px]"
+                  className="relative mx-auto w-[240px] h-[480px] sm:w-[280px] sm:h-[560px] md:w-[320px] md:h-[640px]"
                   style={{ rotateX: tiltX, rotateY: tiltY, transformStyle: 'preserve-3d' as any }}
                   onMouseMove={handleTilt}
                   onMouseLeave={resetTilt}
@@ -240,7 +240,7 @@ function App() {
                           ))}
                         </div>
 
-                        <div className="relative h-72 overflow-hidden rounded-xl">
+                        <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden rounded-xl">
                           <motion.div
                             className="absolute inset-0"
                             animate={{ y: [0, -220, 0] }}
@@ -299,7 +299,7 @@ function App() {
 
               {/* Floating cards */}
               <motion.div
-                className="absolute -top-4 -right-4 bg-white p-3 rounded-xl shadow-lg"
+                className="hidden sm:block absolute -top-4 -right-4 bg-white p-3 rounded-xl shadow-lg"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
               >
@@ -310,7 +310,7 @@ function App() {
               </motion.div>
 
               <motion.div
-                className="absolute -bottom-4 -left-4 bg-white p-3 rounded-xl shadow-lg"
+                className="hidden sm:block absolute -bottom-4 -left-4 bg-white p-3 rounded-xl shadow-lg"
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
               >
