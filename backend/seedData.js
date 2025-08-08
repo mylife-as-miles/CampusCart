@@ -98,55 +98,55 @@ const foodstuffItems = [
     ukSide: ["500g", "1kg"],
     tags: ["protein", "fish", "dried", "seasoning"],
     status: {
-      icon: "🍫",
+      icon: "🐟",
       name: "Available"
     }
   },
   {
     image: ["https://picsum.photos/400/300?random=13", "https://picsum.photos/400/300?random=14"],
-    title: "Iced Coffee",
-    description: "Freshly brewed coffee served over ice. Choose from various flavors and milk options.",
-    price: 600.00,
-    priceBeforeDeal: 750.00,
-    priceOff: 20.00,
+    title: "Maggi Cubes (50 pack)",
+    description: "Essential seasoning cubes for cooking Nigerian dishes. Long-lasting value pack.",
+    price: 750.00,
+    priceBeforeDeal: 850.00,
+    priceOff: 11.76,
     stars: 4.1,
     numberOfReview: 89,
-    ukSide: ["Small", "Medium", "Large"],
-    tags: ["coffee", "beverage", "cold", "caffeine"],
+    ukSide: ["20 pack", "50 pack", "100 pack"],
+    tags: ["seasoning", "maggi", "cooking", "essential"],
     status: {
-      icon: "☕",
+      icon: "🧂",
       name: "Available"
     }
   },
   {
     image: ["https://picsum.photos/400/300?random=15", "https://picsum.photos/400/300?random=16"],
-    title: "Sushi Roll Combo",
-    description: "Fresh sushi rolls including California roll, spicy tuna, and salmon avocado roll.",
-    price: 3500.00,
-    priceBeforeDeal: 4000.00,
-    priceOff: 12.50,
+    title: "Yam Tubers (Medium)",
+    description: "Fresh yam tubers, perfect for pounded yam, boiled yam, or yam porridge.",
+    price: 1000.00,
+    priceBeforeDeal: 1200.00,
+    priceOff: 16.67,
     stars: 4.6,
     numberOfReview: 134,
-    ukSide: ["8 pieces", "12 pieces", "16 pieces"],
-    tags: ["sushi", "japanese", "fresh", "seafood"],
+    ukSide: ["Small", "Medium", "Large"],
+    tags: ["tubers", "yam", "carbohydrate", "fresh"],
     status: {
-      icon: "🍣",
+      icon: "�",
       name: "Available"
     }
   },
   {
     image: ["https://picsum.photos/400/300?random=17", "https://picsum.photos/400/300?random=18"],
-    title: "Veggie Burger",
-    description: "Plant-based patty with fresh vegetables and vegan mayo on a whole grain bun.",
-    price: 1600.00,
-    priceBeforeDeal: 1900.00,
-    priceOff: 15.79,
+    title: "Pure Water (20 sachets)",
+    description: "Clean drinking water in convenient sachets. Essential for daily hydration.",
+    price: 400.00,
+    priceBeforeDeal: 500.00,
+    priceOff: 20.00,
     stars: 4.0,
     numberOfReview: 78,
-    ukSide: ["Regular", "Large"],
-    tags: ["vegetarian", "vegan", "healthy", "burger"],
+    ukSide: ["10 sachets", "20 sachets", "50 sachets"],
+    tags: ["water", "beverage", "essential", "hydration"],
     status: {
-      icon: "🥬",
+      icon: "💧",
       name: "Available"
     }
   },
