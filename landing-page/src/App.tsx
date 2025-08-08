@@ -472,7 +472,7 @@ function App() {
                 avatar: "👩‍🎓"
               }
             ].map((testimonial, index) => (
-              <motion.div key={index} variants={fadeInUp}>
+              <motion.div key={index} variants={fadeInUp} transition={{ duration: 0.6, delay: index * 0.3 }}>
                 <Card className="h-full hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="pt-6">
                     <div className="flex items-center mb-4">
