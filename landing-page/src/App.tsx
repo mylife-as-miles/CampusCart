@@ -575,7 +575,7 @@ function App() {
                 {[
                   { icon: <Phone className="w-5 h-5" />, text: "1-800-CAMPUS" },
                   { icon: <Mail className="w-5 h-5" />, text: "support@campuscart.com" },
-                  { icon: <MapPin className="w-5 h-5" />, text: "University Campus" }
+                  { icon: <MapPin className="w-5 h-5" />, text: "University Of Nigeria Nsukka" }
                 ].map((contact, index) => (
                   <div key={index} className="flex items-center space-x-4">
                     <div className="w-10 h-10 bg-campusRed/10 rounded-lg flex items-center justify-center text-campusRed">
@@ -717,7 +717,7 @@ function App() {
           </div>
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 CampusCart. All rights reserved.</p>
+            <p>&copy; 2025 CampusCart. All rights reserved.</p>
           </div>
         </div>
       </footer>
