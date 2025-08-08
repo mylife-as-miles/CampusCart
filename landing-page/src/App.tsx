@@ -116,16 +116,16 @@ function App() {
                 variants={fadeInUp}
                 transition={{ duration: 0.6 }}
               >
-                Essential <span className="text-campusRed">Foodstuffs</span>
+                Essential <span className="text-campusRed">Fruit Stuffs</span>
                 <br />for <span className="text-campusBlue">UNN Students</span>
               </motion.h1>
 
               <motion.p
-                className="mt-6 text-lg text-gray-600 max-w-2xl"
+                className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto text-center lg:text-center"
                 variants={fadeInUp}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Get staple foodstuffs like rice, beans, garri, oil, spices and more delivered fast to your hostel at the University of Nigeria, Nsukka.
+                Get fresh fruit stuffs like apples, bananas, oranges, berries and more delivered fast to your hostel at the University of Nigeria, Nsukka.
               </motion.p>
 
               <motion.div
@@ -179,7 +179,7 @@ function App() {
               >
                 {[
                   { number: '5K+', label: 'Happy Students' },
-                  { number: '50+', label: 'Food Categories' },
+                  { number: '50+', label: 'Fruit Categories' },
                   { number: '30min', label: 'Avg Delivery' },
                 ].map((stat, index) => (
                   <motion.div key={index} variants={fadeInUp} transition={{ duration: 0.6, delay: index * 0.1 }}>
@@ -224,13 +224,13 @@ function App() {
                         <div className="bg-white border border-gray-200 rounded-xl p-2 shadow-sm">
                           <input
                             readOnly
-                            placeholder="Search foodstuffs..."
+                            placeholder="Search fruit stuffs..."
                             className="w-full bg-transparent text-gray-700 placeholder-gray-400 text-xs outline-none"
                           />
                         </div>
 
                         <div className="flex space-x-2 overflow-x-auto no-scrollbar">
-                          {['Rice', 'Beans', 'Garri', 'Palm Oil', 'Spices', 'Veggies'].map((c, i) => (
+                          {['Apples', 'Bananas', 'Oranges', 'Berries', 'Pineapple', 'Mangoes'].map((c, i) => (
                             <div
                               key={c}
                               className={`flex-shrink-0 px-3 py-1.5 rounded-full text-[10px] ${i === 0 ? 'bg-campusRed text-white' : 'bg-gray-100 text-gray-700'}`}
@@ -327,7 +327,7 @@ function App() {
       {/* Features Section */}
       <section id="features" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -338,11 +338,11 @@ function App() {
               Why Choose CampusCart?
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We make campus dining convenient, fast, and delicious
+              We make getting fresh fruit convenient, fast, and affordable
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={stagger}
             initial="initial"
@@ -353,17 +353,17 @@ function App() {
               {
                 icon: <Zap className="w-8 h-8" />,
                 title: 'Lightning Fast',
-                description: 'Average delivery time of just 15 minutes. We know you\'re busy with studies!'
+                description: "Average delivery time of just 15 minutes. We know you're busy with studies!",
               },
               {
                 icon: <MapPin className="w-8 h-8" />,
                 title: 'Campus Exclusive',
-                description: 'Only campus restaurants and dining halls. Support your local campus economy.'
+                description: 'Only trusted campus vendors and fruit markets. Support your local campus economy.'
               },
               {
                 icon: <Heart className="w-8 h-8" />,
                 title: 'Student Discounts',
-                description: 'Exclusive student pricing and daily deals. Save money while eating great food.'
+                description: 'Exclusive student pricing and daily deals. Save money while buying fresh fruit.'
               },
               {
                 icon: <Smartphone className="w-8 h-8" />,
@@ -378,7 +378,7 @@ function App() {
               {
                 icon: <Star className="w-8 h-8" />,
                 title: 'Quality Assured',
-                description: 'All restaurants are verified and rated by fellow students. Quality you can trust.'
+                description: 'All vendors are verified and rated by fellow students. Quality you can trust.'
               }
             ].map((feature, index) => (
               <motion.div key={index} variants={fadeInUp} transition={{ duration: 0.6, delay: index * 0.2 }}>
@@ -404,18 +404,16 @@ function App() {
       {/* How It Works Section */}
       <section id="how-it-works" className="py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              How It Works
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Getting your favorite food is as easy as 1, 2, 3!
+              Getting your favorite fruit stuffs is as easy as 1, 2, 3!
             </p>
           </motion.div>
 
@@ -424,20 +422,20 @@ function App() {
               {
                 step: '1',
                 title: 'Browse & Choose',
-                description: 'Explore menus from all campus restaurants and select your favorite dishes.'
+                description: 'Explore fresh fruits and bundles from trusted campus vendors.'
               },
               {
                 step: '2',
                 title: 'Order & Pay',
-                description: 'Place your order and pay securely through the app with multiple payment options.'
+                description: 'Place your order and pay securely through the app with multiple options.'
               },
               {
                 step: '3',
                 title: 'Track & Enjoy',
-                description: 'Track your order in real-time and enjoy delicious food delivered to your location.'
+                description: 'Track your order in real time and enjoy fresh delivery to your hostel.'
               }
             ].map((step, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 className="text-center relative"
                 initial={{ opacity: 0, y: 30 }}
@@ -450,7 +448,7 @@ function App() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">{step.title}</h3>
                 <p className="text-gray-600">{step.description}</p>
-                
+
                 {index < 2 && (
                   <div className="hidden md:block absolute top-8 left-full w-full">
                     <ArrowRight className="w-6 h-6 text-gray-300 mx-auto" />
