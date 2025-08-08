@@ -2,7 +2,43 @@
 
 **A Food Delivery App for University of Nigeria, Nsukka (UNN) Students**
 
-CampusCart is a React Native e-commerce application specifically designed for food delivery at the University of Nigeria, Nsukka. Students can browse delicious meals from campus restaurants and local eateries, place orders, and get food delivered directly to their hostels or study locations within the university.
+# CampusCart 🛒📱
+
+**A Foodstuffs Delivery App for University of Nigeria, Nsukka (UNN) Students**
+
+CampusCart is a React Native e-commerce application specifically designed for foodstuffs delivery at the University of Nigeria, Nsukka. Students can browse essential staple foods and groceries, place orders, and get foodstuffs delivered directly to their hostels or study locations within the university.
+
+## 🚀 Features
+
+### 📱 Mobile App Features
+- **Browse Foodstuffs**: Explore various staple food categories (Grains, Tubers, Vegetables, Oils, etc.)
+- **Quick Search**: Find your essential food items instantly
+- **Favorites**: Save your preferred foodstuffs for quick reordering
+- **Shopping Cart**: Add multiple items and customize quantities
+- **Student-Friendly Pricing**: Affordable foodstuffs with bulk purchase discounts
+- **Real-time Delivery Tracking**: Track your order from store to delivery
+- **Multiple Payment Options**: Support for student allowances, digital wallets, and cards
+- **Bulk Ordering**: Order larger quantities at discounted rates
+- **Price Alerts**: Get notified when foodstuff prices drop
+
+### 🛒 Foodstuffs Categories
+- 🌾 Grains & Cereals (Rice, Beans, Garri, Maize)
+- 🍠 Tubers & Root Crops (Yam, Cassava, Potato, Sweet Potato)
+- 🥬 Vegetables & Tomatoes (Fresh tomatoes, peppers, onions, vegetables)
+- 🛢️ Cooking Oils (Palm oil, Vegetable oil, Groundnut oil)
+- 🥫 Proteins (Stock fish, Crayfish, Dry fish)
+- 🧂 Spices & Seasonings (Salt, Maggi, Curry, Thyme)
+- 🍞 Breakfast Items (Bread, Tea, Milk, Sugar)
+- 🥤 Beverages (Pure water, Soft drinks, Fruit juices)
+
+### 💻 Backend Features
+- RESTful API built with Node.js and Express
+- MongoDB database for foodstuff items and orders
+- User authentication and authorization
+- Order management system
+- Real-time order status updates
+- **Price Monitoring**: Track foodstuff inflation and update prices accordingly
+- **Inventory Management**: Real-time stock updates for perishable items
 
 ## 🚀 Features
 
