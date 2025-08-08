@@ -12,47 +12,47 @@ const randomImage = (): string =>
 const SplashData: SplashTypes[] = [
   {
     image: images.splash1,
-    title: 'Browse Menu',
+    title: 'Browse Foodstuffs',
     description:
-      'Discover delicious meals from UNN campus restaurants and local eateries. Fresh food delivered right to your hostel or study spot.',
+      'Discover essential staple foods and groceries for UNN students. Fresh foodstuffs delivered right to your hostel or study spot.',
   },
   {
     image: images.splash2,
-    title: 'Quick Ordering',
+    title: 'Easy Shopping',
     description:
-      'Easy payment with student-friendly prices in Nigerian Naira. Multiple payment options available for UNN students.',
+      'Affordable pricing with bulk discounts in Nigerian Naira. Student-friendly payment options available for essential foodstuffs.',
   },
   {
     image: images.splash3,
     title: 'Fast Delivery',
     description:
-      'Get your food delivered quickly to anywhere on UNN campus. Track your order in real-time from kitchen to your location.',
+      'Get your foodstuffs delivered quickly anywhere on UNN campus. Track your order from store to your location.',
   },
 ];
 const CategoriesData: FeaturesTypes[] = [
   {
     image: randomImage(),
-    title: 'Pizza',
+    title: 'Grains',
   },
   {
     image: randomImage(),
-    title: 'Burgers',
+    title: 'Tubers',
   },
   {
     image: randomImage(),
-    title: 'Asian',
+    title: 'Vegetables',
   },
   {
     image: randomImage(),
-    title: 'Mexican',
+    title: 'Oils',
   },
   {
     image: randomImage(),
-    title: 'Healthy',
+    title: 'Proteins',
   },
   {
     image: randomImage(),
-    title: 'Desserts',
+    title: 'Spices',
   },
   {
     image: randomImage(),
@@ -60,41 +60,41 @@ const CategoriesData: FeaturesTypes[] = [
   },
   {
     image: randomImage(),
-    title: 'Snacks',
+    title: 'Breakfast',
   },
 ];
 
-// Random Food Titles
+// Random Foodstuff Titles
 const titles = [
-  'Margherita Pizza',
-  'Classic Cheeseburger',
-  'Chicken Pad Thai',
-  'Beef Tacos',
-  'Caesar Salad',
-  'Chocolate Brownie',
-  'Iced Coffee',
-  'Club Sandwich',
-  'Sushi Roll',
-  'Pepperoni Pizza',
-  'Veggie Burger',
-  'Chicken Wings',
-  'Pasta Carbonara',
-  'Fish and Chips',
-  'Green Smoothie',
-  'Chicken Burrito',
-  'Chocolate Chip Cookies',
-  'Bubble Tea',
+  'Local Rice (1kg)',
+  'Brown Beans (1kg)',
+  'White Garri (1kg)',
+  'Yam Tubers (Medium)',
+  'Fresh Tomatoes (1kg)',
+  'Red Onions (1kg)',
+  'Palm Oil (1 liter)',
+  'Vegetable Oil (1 liter)',
+  'Stock Fish (500g)',
+  'Crayfish (250g)',
+  'Maggi Cubes (50 pack)',
+  'Pure Water (20 sachets)',
+  'Bread (Large loaf)',
+  'Sugar (1kg)',
+  'Salt (500g)',
+  'Fresh Pepper (500g)',
+  'Plantain (Per hand)',
+  'Irish Potato (1kg)',
 ];
 
 const randomTitle = (): string =>
   titles[Math.floor(Math.random() * titles.length)];
 
 const randomPrice = (): number =>
-  parseFloat((Math.floor(Math.random() * 2000) + 500).toFixed(2));
+  parseFloat((Math.floor(Math.random() * 2500) + 400).toFixed(2));
 
 const randomPriceBeforeDeal = (): number =>
   parseFloat(
-    (randomPrice() + (Math.floor(Math.random() * 800) + 200)).toFixed(2),
+    (randomPrice() + (Math.floor(Math.random() * 500) + 100)).toFixed(2),
   );
 
 const randomPriceOff = (price: number, priceBeforeDeal: number): string =>
