@@ -70,7 +70,7 @@ const HomeScreen = (props: Props) => {
 
   return (
     <Tab.Navigator
-      initialRouteName="Menu"
+      initialRouteName="Home"
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
@@ -117,7 +117,7 @@ const HomeScreen = (props: Props) => {
       />
 
             <Tab.Screen
-        name="Menu"
+        name="Home"
         component={HomeTab}
         options={{
           tabBarLabel: '',
@@ -127,7 +127,7 @@ const HomeScreen = (props: Props) => {
         }}
       />
       <Tab.Screen
-        name="Favorites"
+        name="Wishlist"
         component={WishlistTab}
         options={{
           tabBarLabel: '',
@@ -162,7 +162,7 @@ const HomeScreen = (props: Props) => {
         }}
       />
       <Tab.Screen
-        name="Profile"
+        name="Setting"
         component={SettingTab}
         options={{
           tabBarLabel: '',
