@@ -102,15 +102,15 @@ const ProductsDetailsScreen: React.FC<ProductDetailsProps> = ({route}) => {
         <View className="flex flex-row items-center gap-x-3">
           <Text className="text-black-100 font-bold text-2xl text-start">
             {' '}
-            ${itemDetails?.price}{' '}
+            ₦{itemDetails?.price?.toLocaleString()}{' '}
           </Text>
           <Text className="text-black-100/50 font-thin text-xl  line-through text-start">
             {' '}
-            {itemDetails?.priceBeforeDeal}{' '}
+            ₦{itemDetails?.priceBeforeDeal?.toLocaleString()}{' '}
           </Text>
           <Text className="text-action font-thin text-xl ">
             {' '}
-            {itemDetails?.priceOff}{' '}
+            {itemDetails?.priceOff}% off{' '}
           </Text>
         </View>
         <View className="mt-3">
