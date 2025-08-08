@@ -106,10 +106,11 @@ const randomNumberOfReview = (): number => Math.floor(Math.random() * 10000);
 
 const ProductData: ProductTypes[] = Array.from(
   {length: 15},
-  (): ProductTypes => {
+  (_, index): ProductTypes => {
     const price = randomPrice();
     const priceBeforeDeal = randomPriceBeforeDeal();
     return {
+      _id: `food_${index + 1}`,
       image: [randomImage(), randomImage(), randomImage()],
       title: randomTitle(),
       description: 'Delicious and freshly prepared food item available for delivery to your campus location.',
@@ -118,6 +119,10 @@ const ProductData: ProductTypes[] = Array.from(
       priceOff: randomPriceOff(price, priceBeforeDeal),
       stars: randomStars(),
       numberOfReview: randomNumberOfReview(),
+      tags: ['food', 'delivery', 'campus'],
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      __v: 0,
     };
   },
 );
